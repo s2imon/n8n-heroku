@@ -43,12 +43,20 @@
       "WEBHOOK_URL": {
         "description": "Your app could be published to any domain, without specifying n8n will think that it's hosted on localhost (and it could break some scenarions ",
         "value": "https://<appname>.herokuapp.com"
+    },
+    "EXECUTIONS_MODE": {
+      "description": "This is to set the n8n executions mode to queue mode, recommended to be used with Postgres or MySQL",
+      "value": "queue"
       }
     },
     "formation": {
       "web": {
         "quantity": 1,
         "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
       }
     },
     "addons": [
@@ -60,6 +68,9 @@
       },
       {
         "plan": "papertrail:choklad"
+    },
+    {
+      "plan": "heroku-redis:hobby-dev"
       }
     ]
   }
